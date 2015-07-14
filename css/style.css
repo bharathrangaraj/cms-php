@@ -35,7 +35,7 @@ body{
 
 #content{
 
-    padding-top: 10px;
+    padding-top: 0px;
     background:lightcoral;
     width:100%;
     height:500px;
@@ -49,3 +49,19 @@ body{
 
 
 }
+
+
+#nav2{
+    height: 200px;
+    width: 170px;
+    background:crimson;
+    margin:0px;
+    padding-left:2em;
+    text-align:left;
+}
+
+#main{
+  padding-left: 4em;
+
+    vertical-align: top;
+ }
