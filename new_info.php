@@ -40,7 +40,7 @@ else{
 
                             }
 
-                                    echo "href=\"content.php?info=".urlencode($row['id'])."\"> {$row['menu']}</a></li>";
+                            echo "href=\"content.php?info=".urlencode($row['id'])."\"> {$row['menu']}</a></li>";
                             $result2=get_content_submenu($row[2]);
                             while($row2=mysql_fetch_array($result2)){
                                 echo "<ul class=\"submenu\">";
@@ -55,42 +55,15 @@ else{
                         ?>
                     </ul>
 
-                    <br><br>
-                    <div id="new">
-                        <a href="new_info.php">Add new information</a>
-                    </div>
-
-                </td>
-                <td id="main">
-
-                    <h1 class="topic">
-                        <?php
-                        if(!is_null($table1)) {
-                            echo $table1['menu'];
-                        }elseif(!is_null($table2)) {
-                            echo $table2["menu"];
-                        }
-                        else {
-                            echo "select a menu";
-                        }
-
-                        ?>
-                        <div id="contents">
-                            <?php if(!is_null($table2)) {
-                                $extract="contents";
-                                echo "$table2[$extract]";
-                            } ?>
-
-                        </div>
-
-
-
-
-                    </h1>
-
 
 
                 </td>
+
+                <td>
+
+                    
+                </td>
+
             </tr>
     </div>
     </table>

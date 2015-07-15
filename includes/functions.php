@@ -33,5 +33,40 @@ function get_content_submenu($value){
     checkset($result2);
     return $result2;
 }
+
+function get_info($information_id){
+    global $connection;
+    $query="SELECT *";
+    $query.=" FROM information";
+    $query.=" WHERE id=$information_id";
+    $query.=" LIMIT 1";
+
+    $result=mysql_query($query,$connection);
+    //checkset($result);
+    if($row=mysql_fetch_array($result)){
+        return $row;
+    }
+    else{
+        return NULL;
+    }
+}
+
+function get_page($page_id){
+    global $connection;
+    $query="SELECT *";
+    $query.=" FROM pages";
+    $query.=" WHERE id=$page_id";
+    $query.=" LIMIT 1";
+    $result=mysql_query($query,$connection);
+    //checkset($result);
+    if($row=mysql_fetch_array($result)){
+        return $row;
+    }
+    else{
+        return NULL;
+    }
+}
+
+
 ?>
 

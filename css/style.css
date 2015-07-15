@@ -64,6 +64,7 @@ body{
   padding-left: 4em;
 
     vertical-align: top;
+
  }
 
 ul.menu{
@@ -80,3 +81,22 @@ ul.submenu {
     font-weight:bolder;
 }
 
+.topic{
+    text-align:center;
+}
+
+.tables{
+    width:100%;
+}
+
+#contents{
+    font-size: 14px;
+    text-align: left;
+    padding-top:2em;
+}
+
+#new{
+    font-size: 10px;
+    padding-left: 2em;
+    font-family: "Open Sans", "DejaVu Sans", sans;
+}
