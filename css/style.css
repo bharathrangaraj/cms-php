@@ -53,7 +53,7 @@ body{
 
 #nav2{
     height: 200px;
-    width: 170px;
+    width: 200px;
     background:crimson;
     margin:0px;
     padding-left:2em;
@@ -65,3 +65,18 @@ body{
 
     vertical-align: top;
  }
+
+ul.menu{
+    padding:0px;
+    list-style: none;
+}
+
+ul.submenu {
+    //padding: 0px;
+    list-style: none;
+}
+
+.selected{
+    font-weight:bolder;
+}
+
