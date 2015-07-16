@@ -62,14 +62,15 @@ body{
 
 #main{
   padding-left: 4em;
-
     vertical-align: top;
+
 
  }
 
 ul.menu{
     padding:0px;
     list-style: none;
+
 }
 
 ul.submenu {
@@ -99,4 +100,9 @@ ul.submenu {
     font-size: 10px;
     padding-left: 2em;
     font-family: "Open Sans", "DejaVu Sans", sans;
+}
+
+div.error{
+    color: red;
+    font-family: "Consolas", "Menlo", "Courier", monospace;
 }

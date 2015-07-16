@@ -86,26 +86,46 @@ function find_selected_page(){
 }
 
 function get_navigation($table1,$table2){
-    echo "<ul class=\"menu\">";
+    $output= "<ul class=\"menu\">";
     $result=get_content_menu();
     while($row=mysql_fetch_array($result)){
-        echo "<li> <a ";
+        $output.= "<li> <a ";
         if($row['id']==$table1['id']){
-            echo "class=\"selected\"";
+            $output.= "class=\"selected\"";
         }
-        echo "href=\"content.php?info=".urlencode($row['id'])."\"> {$row['menu']}</a></li>";
+        $output.= "href=\"content.php?info=".urlencode($row['id'])."\"> {$row['menu']}</a></li>";
         $result2=get_content_submenu($row[2]);
         while($row2=mysql_fetch_array($result2)){
-            echo "<ul class=\"submenu\">";
-            echo "<li><a ";
+            $output.= "<ul class=\"submenu\">";
+            $output.= "<li><a ";
             if($row2['id']==$table2['id']){
-                echo "class=\"selected\"";
+                $output.= "class=\"selected\"";
             }
-            echo " href=\"content.php?page=".urlencode($row2['id'])."\">{$row2['menu']}</a></li>";
-            echo "</ul>";
+            $output.= " href=\"content.php?page=".urlencode($row2['id'])."\">{$row2['menu']}</a></li>";
+            $output.=  "</ul>";
         }
     }
-    echo "</ul>";
+    $output.=  "</ul>";
+
+    return $output;
+}
+
+
+function mysql_prep($value){
+    $magic_quotes_active=get_magic_quotes_gpc();
+    $new_enough_php=function_exists("mysql_real_escape_string");
+    if($new_enough_php){
+        if($magic_quotes_active){
+            $value=stripslashes($value);
+        }
+        $value=mysql_real_escape_string($value);
+    }else{
+        if(!$magic_quotes_active){
+            $value=addslashes($value);
+        }
+    }
+
+    return $value;
 }
 
 ?>

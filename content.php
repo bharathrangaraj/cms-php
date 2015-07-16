@@ -17,7 +17,7 @@ find_selected_page();
             <tr>
                 <td id="nav2">
                     <?php
-                    get_navigation($table1,$table2);
+                    echo get_navigation($table1,$table2);
                     ?>
 
                     <br><br>
