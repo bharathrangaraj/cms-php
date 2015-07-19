@@ -128,5 +128,41 @@ function mysql_prep($value){
     return $value;
 }
 
+function get_navigation1($table1,$table2){
+    $output= "<ul class=\"menu\">";
+    $result=get_content_menu();
+    while($row=mysql_fetch_array($result)){
+        $output.= "<li> <a ";
+        if($row['id']==$table1['id']){
+            $output.= "class=\"selected\"";
+        }
+        $output.= "href=\"edit_info.php?info=".urlencode($row['id'])."\"> {$row['menu']}</a></li>";
+        $result2=get_content_submenu($row[2]);
+        while($row2=mysql_fetch_array($result2)){
+            $output.= "<ul class=\"submenu\">";
+            $output.= "<li><a ";
+            if($row2['id']==$table2['id']){
+                $output.= "class=\"selected\"";
+            }
+            $output.= " href=\"content.php?page=".urlencode($row2['id'])."\">{$row2['menu']}</a></li>";
+            $output.=  "</ul>";
+        }
+    }
+    $output.=  "</ul>";
+
+    return $output;
+}
+
+function check_error($info){
+    $max_length= array("info"=>30);
+
+    if(strlen($info)<=$max_length['info']){
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
+
 ?>
 

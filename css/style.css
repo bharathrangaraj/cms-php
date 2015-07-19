@@ -102,7 +102,11 @@ ul.submenu {
     font-family: "Open Sans", "DejaVu Sans", sans;
 }
 
-div.error{
+h4.error{
     color: red;
     font-family: "Consolas", "Menlo", "Courier", monospace;
 }
+ h4.success{
+     color: green;
+     font-family: "Consolas", "Menlo", "Courier", monospace;
+ }

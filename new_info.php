@@ -30,11 +30,11 @@ find_selected_page();
                             <h2>Add Info</h2>
                             <p>
                                 Info Title :
-                                <input type="text" name="info" maxlength="30"><br>
+                                <input type="text" name="info" maxlength="30" required><br>
                             </p>
 
                             <p>
-                                Position:<select name="position">
+                                Position:<select name="position" required>
                                     <?php
                                     $info_set= get_content_menu();
                                     $count=mysql_num_rows($info_set);
@@ -48,8 +48,8 @@ find_selected_page();
                             <P>
                                 Visible:
 
-                                <input type="radio" name="visible" value="0">No
-                                <input type="radio" name="visible" value="1">Yes
+                                <input type="radio" name="visible" value="0" required>No
+                                <input type="radio" name="visible" value="1" required>Yes
                             </P>
 
                             <input type="submit" value="add"><br><br>
