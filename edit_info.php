@@ -8,7 +8,7 @@ find_selected_page();
 <?php
 
 if(intval($_GET['info'])==0){
-
+ header("location:content.php");
 
 }
 if (isset($_POST['submit'])) {
@@ -80,6 +80,10 @@ if (isset($_POST['submit'])) {
                     <?php
                     echo get_navigation1($table1, $table2);
                     ?>
+                    <div id="new">
+                        <a href="new_info.php">Add new information</a>
+                    </div>
+
 
                 </td>
 
@@ -134,9 +138,11 @@ if (isset($_POST['submit'])) {
                             </P>
                             <input type="hidden" name="info" value="<?php echo $table1[0] ?>">
 
-                            <input type="submit" name="submit" value="Edit Information"><br><br>
+                            <input type="submit" name="submit" value="Edit Information">
+                            &nbsp; &nbsp;
+                            <a href="delete_info.php?info=<?php echo urlencode($table1[0]) ?>" onclick="return confirm('Do you really want to delete this?')">Delete Information</a>
 
-                            <a href="content.php">Cancel</a>
+                            <br><br><a href="content.php">Cancel</a>
                         </form>
                         <div >
                             <?php
