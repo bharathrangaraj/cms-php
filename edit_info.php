@@ -157,6 +157,20 @@ if (isset($_POST['submit'])) {
                         </div>
 
                     </div>
+                    <div style="border-top: 1px solid black; margin-top: 2em">
+                        <h3>Pages in this information</h3>
+                        <ul>
+                            <?php
+                            $info_pages=get_page($table1['id']);
+                            while($page=mysql_fetch_array($info_pages)){
+                                echo "<li> < a href=\"content.php?page={$page['id']} \" >{$page['menu']}</a></li>";
+                            }
+                            ?>
+                        </ul>
+                        <br>
+                        <a href="new_page.php?info=<?php echo $table1['id'];?>">Add a new page to this information</a>
+
+                    </div>
 
 
                 </td>
